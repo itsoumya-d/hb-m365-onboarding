@@ -53,6 +53,12 @@ npm run build && npm start
 
 The server listens on `:8095` by default and seeds a complete sample onboarding.
 
+## Google Workspace migration
+
+`src/workspace-migration.ts` extends the readiness engine to Microsoft 365 → Google Workspace migrations: discovery, identity/group/MFA mapping, weighted mail/calendar/drive migration, MX/SPF/DKIM/DMARC cutover readiness, rollback proof and explicit cutover approval. It exposes `WorkspaceMigrationService` with `create`, `update`, `approveCutover`, `summary` and `audit`.
+
+`npm test` now covers 34 Vitest tests (22 onboarding + 12 Workspace migration).
+
 ## Test
 
 ```bash
